@@ -25,7 +25,6 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          npm run test --if-present
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -53,4 +52,4 @@ jobs:
           app-name: 'investmentbank'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0012088E99C74B3CA7305F4C79EAB47F }}
-          package: .
+          package: ./dist/hello-world-app
